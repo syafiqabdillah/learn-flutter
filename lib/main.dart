@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 
-import 'package:test_flutter/screens/home/home.dart';
+import 'package:learn_flutter/screens/splash/splash.dart';
+import 'package:learn_flutter/routes.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: Colors.blue[500],
       ),
-      home: MyHomePage(),
+      routes: routes,
+      initialRoute: SplashScreen.routeName,
     );
   }
 }
