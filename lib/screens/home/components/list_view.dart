@@ -9,7 +9,7 @@ class ListItem extends StatelessWidget {
     final List<int> colorCodes = <int>[600, 500, 100];
 
     return ListView.builder(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(10),
         itemCount: entries.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
