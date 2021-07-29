@@ -16,19 +16,26 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Learn Flutter"),
-        ),
-        body: Container(
-          color: Colors.green,
-          child: Column(
-            children: [
-              SearchBar(),
-              Expanded(
-                child: ListItem(),
-              )
-            ],
-          ),
-        ));
+      appBar: AppBar(
+        title: Text("Learn Flutter"),
+      ),
+      body: GestureDetector(
+          onTap: () {
+            FocusScopeNode currentFocus = FocusScope.of(context);
+            if (!currentFocus.hasPrimaryFocus) {
+              currentFocus.unfocus();
+            }
+          },
+          child: Container(
+            child: Column(
+              children: [
+                SearchBar(),
+                Expanded(
+                  child: ListItem(),
+                )
+              ],
+            ),
+          )),
+    );
   }
 }
